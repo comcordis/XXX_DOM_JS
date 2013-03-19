@@ -496,6 +496,11 @@
 		
 		nativeCharacterLineInput:
 		{
+			getNativeForm: function (nativeCharacterLineInput)
+			{
+				return nativeCharacterLineInput.form;
+			},
+			
 			// Disabled
 			
 				setDisabled: function (nativeCharacterLineInput, disabled)
@@ -2297,7 +2302,7 @@
 			getSection: function (nativeTable, section)
 			{
 				var result = false;
-				
+								
 				if (section == 'header')
 				{
 					result = nativeTable.tHead;	
@@ -2306,7 +2311,7 @@
 				{
 					result = nativeTable.tFoot;	
 				}
-				else if (section == 'body')
+				else
 				{
 					result = nativeTable.tBodies[0];	
 				}
