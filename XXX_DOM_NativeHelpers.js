@@ -79,13 +79,13 @@
 						// Some browsers use lower case tags
 						var scriptPosition = XXX_String.findFirstPosition(content, '<script');
 						
-						if (scriptPosition == -1)
+						if (scriptPosition === false)
 						{
 							// Some browsers use upper case tags
 							scriptPosition = XXX_String.findFirstPosition(content, '<SCRIPT');
 						}
 						
-						if (scriptPosition > -1)
+						if (scriptPosition !== false)
 						{
 							content = XXX_String.getPart(content, 0, scriptPosition);				
 						}
@@ -1635,11 +1635,11 @@
 					{					
 						var filePart = file;
 							
-						if (XXX_String.findFirstPosition(file, '/') != -1)
+						if (XXX_String.findFirstPosition(file, '/') !== false)
 						{
 						 	filePart = XXX_String.getLastSeparatedPart(file, '/');
 						}
-						else if (XXX_String.findFirstPosition(file, '\\') != -1)
+						else if (XXX_String.findFirstPosition(file, '\\') !== false)
 						{
 						 	filePart = XXX_String.getLastSeparatedPart(file, '\\');
 						}
@@ -1649,7 +1649,7 @@
 						var extension = file;
 						var name = file;
 						
-						if (XXX_String.findFirstPosition(file, '.') != -1)
+						if (XXX_String.findFirstPosition(file, '.') !== false)
 						{
 							var fileParts = XXX_String.splitToArray(file, '.');
 							
@@ -1740,7 +1740,7 @@
 						{
 							var files = [];
 							
-							if (XXX_String.findFirstPosition(value, '"') != -1)
+							if (XXX_String.findFirstPosition(value, '"') !== false)
 							{
 								parts = XXX_String.splitToArray(value, '" "');
 								
