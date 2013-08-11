@@ -1383,12 +1383,12 @@
 						rows = 3;
 					}
 					
-					nativeFreeOptionListBoxInput.rows = rows;
+					nativeFreeOptionListBoxInput.size = rows;
 				},
 				
 				getRows: function (nativeFreeOptionListBoxInput)
 				{
-					var rows = nativeFreeOptionListBoxInput.rows;
+					var rows = nativeFreeOptionListBoxInput.size;
 					
 					if (!XXX_Type.isPositiveInteger(rows))
 					{
